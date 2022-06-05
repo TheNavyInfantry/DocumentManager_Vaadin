@@ -1,0 +1,14 @@
+version: '3'
+
+services:
+  db:
+    image: postgres
+    container_name: docmanager_docker
+    restart: always
+    environment:
+      POSTGRES_PASSWORD: dmvaadin
+      POSTGRES_DB: docmanager_db
+    volumes:
+      - .postgres_data_dev:/var/lib/postgresql/data/
+    ports:
+      - "5432:5432"
