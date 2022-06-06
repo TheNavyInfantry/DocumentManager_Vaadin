@@ -53,6 +53,13 @@ class MainView(private val folderService: FolderService, private val documentSer
         homepageView.isVisible = true
         homepageView.removeAll()
 
+        val upperFolderButton = Button("Upper Folder")
+        upperFolderButton.addThemeVariants(ButtonVariant.LUMO_SUCCESS)
+
+        upperFolderButton.addClickListener {
+            showHomepage(folderDTO?.parentFolder?.toFolderDTO())
+        }
+
         var path = folderDTO?.name ?: ""
         var currentFolder = folderDTO
 
@@ -61,17 +68,15 @@ class MainView(private val folderService: FolderService, private val documentSer
             currentFolder = currentFolder.parentFolder!!.toFolderDTO()
         }
 
-        val upperFolderButton = Button("Upper Folder")
 
-        upperFolderButton.addClickListener {
-            showHomepage(folderDTO?.parentFolder?.toFolderDTO())
-        }
-
-        val pathText = H3("Path: /$path")
+        val pathText = H3("Current Path: /$path")
         val folderView = showFolderView(folderDTO)
+        homepageView.setHorizontalComponentAlignment(FlexComponent.Alignment.CENTER, pathText)
 
         val addFolderButton = Button("Add Folder")
+        addFolderButton.addThemeVariants(ButtonVariant.LUMO_SUCCESS)
         val addFileButton = Button("Add File")
+        addFileButton.addThemeVariants(ButtonVariant.LUMO_SUCCESS)
 
         addFolderButton.addClickListener {
             showAddFolderPage(folderDTO)
@@ -83,6 +88,7 @@ class MainView(private val folderService: FolderService, private val documentSer
 
         if (folderDTO != null) {
             homepageView.add(upperFolderButton)
+            homepageView.setHorizontalComponentAlignment(FlexComponent.Alignment.CENTER, upperFolderButton)
         }
 
         val buttonHorizontalLayout = HorizontalLayout(addFolderButton, addFileButton)
@@ -92,6 +98,8 @@ class MainView(private val folderService: FolderService, private val documentSer
             folderView,
             buttonHorizontalLayout,
         )
+
+        homepageView.setHorizontalComponentAlignment(FlexComponent.Alignment.CENTER, buttonHorizontalLayout)
     }
 
     private fun showAddFolderPage(parentFolder: FolderDTO? = null) {
@@ -102,12 +110,12 @@ class MainView(private val folderService: FolderService, private val documentSer
         addFolderView.width = "500px"
 
         val backButton = Button("Folders")
+        backButton.addThemeVariants(ButtonVariant.LUMO_SUCCESS)
 
         backButton.addClickListener {
             showHomepage(parentFolder)
         }
 
-        addFolderView.add(backButton)
 
         val title = H2("Add New Folder")
         addFolderView.add(title)
@@ -121,9 +129,9 @@ class MainView(private val folderService: FolderService, private val documentSer
         color.setItems(Colour.values().toList())
         color.setItemLabelGenerator(Colour::name)
 
-        color.value = Colour.GREEN
+        color.value = Colour.Green
 
-        createButton.addThemeVariants(ButtonVariant.LUMO_PRIMARY)
+        createButton.addThemeVariants(ButtonVariant.LUMO_SUCCESS)
 
         createButton.icon = Icon(VaadinIcon.PLUS)
 
@@ -154,6 +162,9 @@ class MainView(private val folderService: FolderService, private val documentSer
 
         addFolderView.add(formLayout)
 
+        addFolderView.add(backButton)
+        addFolderView.setHorizontalComponentAlignment(FlexComponent.Alignment.CENTER, backButton)
+
         setHorizontalComponentAlignment(FlexComponent.Alignment.CENTER, addFolderView)
     }
 
@@ -165,12 +176,13 @@ class MainView(private val folderService: FolderService, private val documentSer
         addFileView.width = "500px"
 
         val backButton = Button("Folders")
+        backButton.addThemeVariants(ButtonVariant.LUMO_SUCCESS)
 
         backButton.addClickListener {
             showHomepage(parentFolder)
         }
 
-        addFileView.add(backButton)
+
 
         val title = H2("Add New File")
 
@@ -185,9 +197,9 @@ class MainView(private val folderService: FolderService, private val documentSer
         mimeType.setItems(MimeType.values().toList())
         mimeType.setItemLabelGenerator(MimeType::name)
 
-        mimeType.value = MimeType.PDF
+        mimeType.value = MimeType.Other
 
-        createButton.addThemeVariants(ButtonVariant.LUMO_PRIMARY)
+        createButton.addThemeVariants(ButtonVariant.LUMO_SUCCESS)
 
         createButton.icon = Icon(VaadinIcon.PLUS)
 
@@ -218,6 +230,9 @@ class MainView(private val folderService: FolderService, private val documentSer
 
         addFileView.add(formLayout)
 
+        addFileView.add(backButton)
+        addFileView.setHorizontalComponentAlignment(FlexComponent.Alignment.CENTER, backButton)
+
         setHorizontalComponentAlignment(FlexComponent.Alignment.CENTER, addFileView)
     }
 
@@ -229,12 +244,13 @@ class MainView(private val folderService: FolderService, private val documentSer
         editView.width = "500px"
 
         val backButton = Button("Folders")
+        backButton.addThemeVariants(ButtonVariant.LUMO_SUCCESS)
 
         backButton.addClickListener {
             showHomepage(parentFolder)
         }
 
-        editView.add(backButton)
+
 
         val title = H2("Edit " + if (item is FolderDTO) "Folder" else "Document")
 
@@ -266,9 +282,8 @@ class MainView(private val folderService: FolderService, private val documentSer
             mimeType.value = item.type
         }
 
-        saveButton.addThemeVariants(ButtonVariant.LUMO_PRIMARY)
-
-        saveButton.icon = Icon(VaadinIcon.HAMMER)
+        saveButton.icon = Icon(VaadinIcon.RECORDS)
+        saveButton.addThemeVariants(ButtonVariant.LUMO_SUCCESS)
 
         saveButton.addClickListener {
             if (item is FolderDTO) {
@@ -334,6 +349,10 @@ class MainView(private val folderService: FolderService, private val documentSer
 
         editView.add(formLayout)
 
+        editView.add(backButton)
+        addFolderView.setHorizontalComponentAlignment(FlexComponent.Alignment.CENTER, backButton)
+
+
         setHorizontalComponentAlignment(FlexComponent.Alignment.CENTER, editView)
     }
 
@@ -362,9 +381,9 @@ class MainView(private val folderService: FolderService, private val documentSer
 
         gridLayout.addColumn(ComponentRenderer label@{ item ->
             if (item is FolderDTO) {
-                return@label VaadinIcon.FOLDER.create()
+                return@label VaadinIcon.FOLDER_O.create()
             } else {
-                return@label VaadinIcon.FILE.create()
+                return@label VaadinIcon.FILE_O.create()
             }
         }).flexGrow = 0
         gridLayout.addColumn(Item::id).setHeader("ID")
@@ -375,6 +394,7 @@ class MainView(private val folderService: FolderService, private val documentSer
 
         gridLayout.addColumn(ComponentRenderer label@{ item ->
             val button = Button(Icon(VaadinIcon.EDIT))
+            button.addThemeVariants(ButtonVariant.LUMO_SUCCESS)
 
             button.addClickListener {
                 dontClick = true
@@ -385,6 +405,7 @@ class MainView(private val folderService: FolderService, private val documentSer
         }).setFrozen(true).flexGrow = 0
         gridLayout.addColumn(ComponentRenderer label@{ item ->
             val button = Button(Icon(VaadinIcon.TRASH))
+            button.addThemeVariants(ButtonVariant.LUMO_SUCCESS)
 
             button.addClickListener {
                 val newItemsList = items.toMutableList()
@@ -437,8 +458,6 @@ class MainView(private val folderService: FolderService, private val documentSer
             showHomepage(documentDTO.parentFolder?.toFolderDTO())
         }
 
-        showFileView.add(backButton)
-
         val title = H2("File Detail Information")
 
         showFileView.add(title)
@@ -474,6 +493,10 @@ class MainView(private val folderService: FolderService, private val documentSer
         showFileView.add(pathText)
 
         setHorizontalComponentAlignment(FlexComponent.Alignment.CENTER, showFileView)
+
+        showFileView.add(backButton)
+        backButton.addThemeVariants(ButtonVariant.LUMO_SUCCESS)
+        showFileView.setHorizontalComponentAlignment(FlexComponent.Alignment.CENTER, backButton)
     }
 
     private fun hideAllViews() {
