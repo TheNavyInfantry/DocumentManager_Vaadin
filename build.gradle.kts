@@ -4,6 +4,7 @@ plugins {
     id("org.springframework.boot") version "2.7.0"
     id("io.spring.dependency-management") version "1.0.11.RELEASE"
     id("com.vaadin") version "0.14.6.0"
+    id("org.jetbrains.kotlin.plugin.jpa") version "1.6.21"
     kotlin("jvm") version "1.6.21"
     kotlin("plugin.spring") version "1.6.21"
 }
@@ -26,6 +27,13 @@ dependencies {
     implementation("org.jetbrains.kotlin:kotlin-reflect")
     implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8")
     testImplementation("org.springframework.boot:spring-boot-starter-test")
+
+    // https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-data-jpa
+    implementation(group = "org.springframework.boot", name = "spring-boot-starter-data-jpa", version = "2.7.0")
+    // https://mvnrepository.com/artifact/org.postgresql/postgresql
+    implementation(group = "org.postgresql", name = "postgresql", version = "42.3.6")
+
+    implementation("org.springframework.boot:spring-boot-devtools")
 }
 
 dependencyManagement {
@@ -44,8 +52,3 @@ tasks.withType<KotlinCompile> {
 tasks.withType<Test> {
     useJUnitPlatform()
 }
-
-// https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-data-jpa
-implementation(group = "org.springframework.boot", name = "spring-boot-starter-data-jpa", version = "2.7.0")
-// https://mvnrepository.com/artifact/org.postgresql/postgresql
-implementation(group = "org.postgresql", name = "postgresql", version = "42.3.6")
