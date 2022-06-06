@@ -252,7 +252,7 @@ class MainView(private val folderService: FolderService, private val documentSer
 
 
 
-        val title = H2("Edit " + if (item is FolderDTO) "Folder" else "Document")
+        val title = H2("Edit " + if (item is FolderDTO) "Folder" else "File")
 
         editView.add(title)
         editView.setHorizontalComponentAlignment(FlexComponent.Alignment.CENTER, title)
