@@ -2,7 +2,7 @@
 
 ---
 
-**This is a document manager system written with Kotlin and Vaadin.**
+**This is a document manager system written with Kotlin and Vaadin Framework.**
 
 **Developed by Nedim Can Ulusoy (Neptun: HUUMCJ) as a Final Project for the Vaadin Lecture.**
 
