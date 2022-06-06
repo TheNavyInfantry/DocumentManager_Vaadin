@@ -1,12 +1,10 @@
-<center><h2>Vaadin Lecture Final Project</h2></center>
+## Vaadin Lecture Final Project
 
 ---
 
-<center>
-<b>This is a document manager system written with Java and Vaadin.</b>
+**This is a document manager system written with Java and Vaadin.**
 
-<b>Developed by Nedim Can Ulusoy (Neptun: HUUMCJ) as a Final Project for the Vaadin Lecture.</b>
-</center>
+**Developed by Nedim Can Ulusoy (Neptun: HUUMCJ) as a Final Project for the Vaadin Lecture.**
 
 ---
 
