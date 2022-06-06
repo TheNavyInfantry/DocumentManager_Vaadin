@@ -57,7 +57,26 @@ Once you run this command, the project will be available at http://localhost:808
 
 ### Project Visuals
 
+**1. Home Page**
+![](https://github.com/TheNavyInfantry/DocumentManager_Vaadin/blob/master/visuals/fileA.png?raw=true)
 
+[comment]: <> (![]&#40;../docmanager/visuals/fileA.png&#41;)
+
+[comment]: <> (**2. New Folder**)
+
+[comment]: <> (![]&#40;../docmanager/visuals/fileB.png&#41;)
+
+[comment]: <> (**3. New File**)
+
+[comment]: <> (![]&#40;../docmanager/visuals/fileC.png&#41;)
+
+[comment]: <> (**4. Edit Folder**)
+
+[comment]: <> (![]&#40;../docmanager/visuals/fileD.png&#41;)
+
+[comment]: <> (**5. Edit File**)
+
+[comment]: <> (![]&#40;../docmanager/visuals/fileE.png&#41;)
 
 ---
 
