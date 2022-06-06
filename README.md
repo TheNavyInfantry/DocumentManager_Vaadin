@@ -78,6 +78,8 @@ Once you run this command, the project will be available at http://localhost:808
 
 ![](../docmanager/visuals/fileE.png)
 
+---
+
 ### License
 
 This project is licensed under the GNU GPLv3 License - see the [LICENSE](LICENSE) file for details
