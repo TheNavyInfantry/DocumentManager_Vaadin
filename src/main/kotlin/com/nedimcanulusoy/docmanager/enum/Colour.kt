@@ -1,5 +1,5 @@
 package com.nedimcanulusoy.docmanager.enum
 
 enum class Colour {
-    RED, ORANGE, PURPLE, GREEN, BLUE
+    Green, Orange, Red, Blue, Purple, Yellow, Grey, Black, White
 }
