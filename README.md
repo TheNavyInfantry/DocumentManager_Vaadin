@@ -60,23 +60,21 @@ Once you run this command, the project will be available at http://localhost:808
 **1. Home Page**
 ![](https://github.com/TheNavyInfantry/DocumentManager_Vaadin/blob/master/visuals/fileA.png?raw=true)
 
-[comment]: <> (![]&#40;../docmanager/visuals/fileA.png&#41;)
+**2. New Folder**
 
-[comment]: <> (**2. New Folder**)
+![](https://github.com/TheNavyInfantry/DocumentManager_Vaadin/blob/master/visuals/fileB.png?raw=true)
 
-[comment]: <> (![]&#40;../docmanager/visuals/fileB.png&#41;)
+**3. New File**
 
-[comment]: <> (**3. New File**)
+![](https://github.com/TheNavyInfantry/DocumentManager_Vaadin/blob/master/visuals/fileC.png?raw=true)
 
-[comment]: <> (![]&#40;../docmanager/visuals/fileC.png&#41;)
+**4. Edit Folder**
 
-[comment]: <> (**4. Edit Folder**)
+![](https://github.com/TheNavyInfantry/DocumentManager_Vaadin/blob/master/visuals/fileD.png?raw=true)
 
-[comment]: <> (![]&#40;../docmanager/visuals/fileD.png&#41;)
+**5. Edit File**
 
-[comment]: <> (**5. Edit File**)
-
-[comment]: <> (![]&#40;../docmanager/visuals/fileE.png&#41;)
+![](https://github.com/TheNavyInfantry/DocumentManager_Vaadin/blob/master/visuals/fileE.png?raw=true)
 
 ---
 
