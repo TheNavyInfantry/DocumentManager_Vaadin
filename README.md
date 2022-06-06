@@ -1,4 +1,4 @@
-<center><h2>Vaadin Lesson Final Project</h2></center>
+<center><h2>Vaadin Lecture Final Project</h2></center>
 
 ---
 <center>
