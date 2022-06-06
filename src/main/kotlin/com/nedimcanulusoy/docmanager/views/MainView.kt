@@ -121,10 +121,10 @@ class MainView(private val folderService: FolderService, private val documentSer
         addFolderView.add(title)
         addFolderView.setHorizontalComponentAlignment(FlexComponent.Alignment.CENTER, title)
 
-        val name = TextField("Name")
-        val color = ComboBox<Colour>("Colour")
-        val description = TextField("Description")
-        val createButton = Button("Create")
+        val name = TextField("Folder Name")
+        val color = ComboBox<Colour>("Folder Colour")
+        val description = TextField("Folder Description")
+        val createButton = Button("Create Folder")
 
         color.setItems(Colour.values().toList())
         color.setItemLabelGenerator(Colour::name)
@@ -183,16 +183,15 @@ class MainView(private val folderService: FolderService, private val documentSer
         }
 
 
-
         val title = H2("Add New File")
 
         addFileView.add(title)
         addFileView.setHorizontalComponentAlignment(FlexComponent.Alignment.CENTER, title)
 
-        val name = TextField("Name")
-        val description = TextField("Description")
-        val mimeType = ComboBox<MimeType>("Mime Type")
-        val createButton = Button("Create")
+        val name = TextField("File Name")
+        val description = TextField("File Description")
+        val mimeType = ComboBox<MimeType>("File Mime Type")
+        val createButton = Button("Create File")
 
         mimeType.setItems(MimeType.values().toList())
         mimeType.setItemLabelGenerator(MimeType::name)
