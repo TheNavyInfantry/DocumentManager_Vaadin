@@ -1,6 +1,7 @@
 <center><h2>Vaadin Lecture Final Project</h2></center>
 
 ---
+
 <center>
 <b>This is a document manager system written with Java and Vaadin.</b>
 
