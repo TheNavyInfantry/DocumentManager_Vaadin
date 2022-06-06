@@ -41,3 +41,4 @@ out/
 frontend/generated
 target
 webpack.generated.js
+package-lock.json
