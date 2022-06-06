@@ -2,7 +2,7 @@
 
 ---
 <center>
-<b>This is a document management system written with Java and Vaadin.</b>
+<b>This is a document manager system written with Java and Vaadin.</b>
 
 <b>Developed by Nedim Can Ulusoy (Neptun: HUUMCJ) as a Final Project for the Vaadin Lecture.</b>
 </center>
