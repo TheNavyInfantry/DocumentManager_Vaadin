@@ -57,25 +57,7 @@ Once you run this command, the project will be available at http://localhost:808
 
 ### Project Visuals
 
-**1. Home Page**
 
-![](../docmanager/visuals/fileA.png)
-
-**2. New Folder**
-
-![](../docmanager/visuals/fileB.png)
-
-**3. New File**
-
-![](../docmanager/visuals/fileC.png)
-
-**4. Edit Folder**
-
-![](../docmanager/visuals/fileD.png)
-
-**5. Edit File**
-
-![](../docmanager/visuals/fileE.png)
 
 ---
 
